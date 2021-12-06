@@ -11,12 +11,14 @@ import {StatusBar} from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import HomeScreen from './src/screens/HomeScreen';
+import DestinationSearch from './src/screens/DestinationSearch';
 
 const App = () => {
   return (
     <>
       <StatusBar barStyle={'dark-content'} />
-      <HomeScreen />
+      {/* <HomeScreen /> */}
+      <DestinationSearch />
     </>
   );
 };
