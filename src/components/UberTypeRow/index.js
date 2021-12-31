@@ -4,24 +4,29 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const UberTypeRow = props => {
-  console.log(props);
-
   const {type} = props;
 
-  console.log('type', type);
+  const getImage = () => {
+    if (type.type === 'UberX') {
+      return require('../../assets/images/UberX.jpeg');
+    }
+
+    if (type.type === 'Comfort') {
+      return require('../../assets/images/Comfort.jpeg');
+    }
+
+    return require('../../assets/images/UberXL.jpeg');
+  };
 
   return (
     <View style={styles.container}>
       {type ? (
         <>
-          <Image
-            style={styles.image}
-            source={require('../../assets/UberX.jpeg')}
-          />
+          <Image style={styles.image} source={getImage()} />
           <View style={styles.middleContainer}>
             <Text style={styles.type}>
               {' '}
-              {type.id} <Ionicons name={'person'} size={19} /> 3
+              {type.type} <Ionicons name={'person'} size={19} /> 3
             </Text>
             <Text style={styles.time}> 8:03PM drop off</Text>
           </View>

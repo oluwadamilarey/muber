@@ -1,37 +1,37 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Pressable} from 'react-native';
 import UberTypeRow from '../UberTypeRow';
 
-// import typesData from '../../assets/data/types';
-
-const typesData = [
-  {
-    id: '0',
-    type: 'UberX',
-    price: 22,
-    duration: 45,
-  },
-  {
-    id: '1',
-    type: 'Comfort',
-    price: 27,
-    duration: 30,
-  },
-  {
-    id: '2',
-    type: 'UberXL',
-    price: 36,
-    duration: 27,
-  },
-];
+import typesData from '../../assets/data/types';
 
 const UberTypes = () => {
+  const confirm = () => {
+    console.warn('confirm');
+  };
+
   return (
     <View>
       {typesData.map(type => (
         <UberTypeRow type={type} key={type.id} />
       ))}
-      <UberTypeRow />
+
+      <Pressable
+        onPress={confirm}
+        style={{
+          backgroundColor: 'black',
+          padding: 10,
+          margin: 10,
+          alignItems: 'center',
+          borderRadius: 5,
+        }}>
+        <Text
+          style={{
+            color: 'white',
+            fontWeight: 'bold',
+          }}>
+          Confirm
+        </Text>
+      </Pressable>
     </View>
   );
 };
