@@ -19,7 +19,7 @@ const App = () => {
     <>
       <StatusBar barStyle={'dark-content'} />
       {/* <HomeScreen /> */}
-      <SearchResults />
+      <HomeScreen />
     </>
   );
 };

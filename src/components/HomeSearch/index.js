@@ -17,7 +17,6 @@ const HomeSearch = () => {
           <MaterialIcons name={'keyboard-arrow-down'} size={16} />
         </View>
       </View>
-
       {/** Previous Destination */}
       <View style={styles.row}>
         <View style={styles.iconContainer}>
